@@ -21,7 +21,7 @@ module.exports = {
   // fontsDST: `./dist/${passwordHash}/fonts/`, // Destination folder of general files
   fontsDST: `./dist/fonts/`, // Destination folder of general files
   // videosDST: `./dist/${passwordHash}/videos/`, // Destination folder of general files
-  videosDST: `./dist//videos/`, // Destination folder of general files
+  videosDST: `./dist/videos/`, // Destination folder of general files
   // generalDST: `./dist/${passwordHash}/`, // Destination folder of general files
   generalDST: `./dist/`, // Destination folder of general files
 
