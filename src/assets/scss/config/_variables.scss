@@ -1,0 +1,177 @@
+/**
+ * Colours
+ */
+
+// Design Colors
+
+@use "sass:math";
+
+$tarawera: #073a50;
+$pesto: #8c6f2f;
+$white: #ffffff;
+
+// UI Colors
+:root {
+  --plyr-color-main: #{$tarawera};
+
+  --color-canvas: #{$white};
+  --color-canvas-inverted: #{$tarawera};
+
+  --color-brand-100: #{$tarawera};
+  --color-brand-200: #{$pesto};
+  --color-brand-300: #{$white};
+
+  --color-shadow-100: #{rgba($tarawera, 0.3)};
+  --color-shadow-200: #{rgba($pesto, 0.3)};
+  --color-shadow-300: #{rgba($white, 0.3)};
+
+  --color-text: #{$tarawera};
+  --color-text-inverted: #{$white};
+
+  --color-background-100: #{$tarawera};
+  --color-background-200: #{$pesto};
+  --color-background-300: #{$white};
+
+  --color-border-100: #{$tarawera};
+  --color-border-200: #{$pesto};
+  --color-border-300: #{$white};
+
+  --color-ui-100: #{$tarawera};
+  --color-ui-200: #{$pesto};
+  --color-ui-300: #{$white};
+
+  --color-ui-success: #28a745;
+  --color-ui-warn: #ffc107;
+  --color-ui-danger: #dc3545;
+
+  --color-ui-placeholder: #{rgba($tarawera, 0.5)};
+}
+
+/**
+ * Gradients
+ */
+
+$gradient-full: linear-gradient(
+  90deg,
+  rgb(255, 255, 255) 0%,
+  rgb(0, 65, 80) 0%,
+  rgb(0, 117, 123) 20%,
+  rgb(53, 178, 156) 40%,
+  rgb(31, 161, 255) 60%,
+  rgb(170, 12, 171) 80%,
+  rgb(128, 31, 255) 100%
+);
+$gradient-partial-100: linear-gradient(90deg, #004150 0%, #00525e 50%, #047e80 100%);
+$gradient-partial-200: linear-gradient(90deg, #0f8984 0%, #31af95 50%, #29b2c9 100%);
+$gradient-partial-300: linear-gradient(90deg, #21b2de 0%, #2c91fb 50%, #8831be 100%);
+$gradient-partial-400: linear-gradient(90deg, #9f19af 0%, #a20cc8 50%, #801ffe 100%);
+
+// $gradient-partial-500: linear-gradient(90deg, #004150 0%, #02797d 50%, #1e9a89 100%);
+
+$gradient-partial-100-200: linear-gradient(
+  90deg,
+  #004150 0%,
+  #00525e 16.66666667%,
+  #047e80 33.33333334%,
+  #0f8984 50.00000001%,
+  #31af95 66.66666668%,
+  #29b2c9 100%
+);
+$gradient-partial-300-400: linear-gradient(
+  90deg,
+  #21b2de 0%,
+  #2c91fb 16.66666667%,
+  #8831be 33.33333334%,
+  #9f19af 50.00000001%,
+  #a20cc8 66.66666668%,
+  #801ffe 100%
+);
+
+/**
+ * Radius
+ */
+
+$radius-100: 5px;
+$radius-200: 10px;
+
+/**
+* Container
+*/
+
+$container-max-width: 1440px;
+$container-wide-max-width: 1720px;
+$content-max-width: 1280px;
+
+/**
+ * Breakpoints
+ */
+
+$breakpoint-mobile-m: 375px;
+$breakpoint-mobile-l: 425px;
+$breakpoint-mobile-horizontal: 480px;
+$breakpoint-tablet-small: 630px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-horizontal: 1024px;
+$breakpoint-desktop-small: 1230px;
+$breakpoint-desktop: 1280px;
+$breakpoint-desktop-wide: 1440px;
+$breakpoint-desktop-xwide: 1560px;
+
+/**
+* Animation
+*/
+
+$animation-duration: 300ms;
+$animation-easing: ease-in-out;
+
+/**
+* Selectors
+*/
+
+$selectors-headings: "h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6";
+$selectors-inputs: '[type="tel"], [type="url"], [type="text"], [type="date"], [type="email"], [type="search"], [type="number"], [type="password"], textarea, select';
+
+/**
+ * Typography
+ */
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Regular.woff2") format("woff2"), url("../fonts/Satoshi-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Medium.woff2") format("woff2"), url("../fonts/Satoshi-Medium.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zodiak";
+  src: url("../fonts/Zodiak-Regular.woff2") format("woff2"), url("../fonts/Zodiak-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zodiak";
+  src: url("../fonts/Zodiak-Bold.woff2") format("woff2"), url("../fonts/Zodiak-Bold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+$typography-font-size: 16;
+$typography-line-height: 1.5;
+$typography-primary: "Satoshi", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$typography-secondary: "Zodiak", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+:root {
+  --plyr-color-main: #35b29c;
+}

@@ -1,0 +1,55 @@
+{{!-- layouts/base.hbs --}}
+
+<!doctype html>
+<html>
+  <head>
+    <title>
+      {{title}}
+    </title>
+
+    {{#if description}}
+      <meta name="description" content="{{description}}">
+    {{else}}
+      <meta name="description" content="">
+    {{/if}}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
+  <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+
+    {{!-- <style>
+      {{{inline "./dist/css/style.css"}}}
+    </style> --}}
+
+    {{#> head-block}}
+      {{!-- Custom <head> content per page could be added. --}}
+    {{/head-block}}
+  </head>
+  <body class="{{classes}}">
+    <div class="site-wrapper">
+      <main class="main">
+        {{#> main}}
+          {{!-- content goes here. --}}
+        {{/main}}
+      </main>
+    </div>
+
+
+    {{#> footer-block}}
+      {{!--
+        The `includes/footer` partial is the default content,
+        but can be overridden.
+      --}}
+    {{/footer-block}}
+
+    {{#> scripts-block}}
+      {{!-- Custom scripts per page can be added. --}}
+      <script defer type="text/javascript" src="/js/script-min.js"></script>
+    {{/scripts-block}}
+  </body>
+</html>

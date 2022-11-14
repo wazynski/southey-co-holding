@@ -1,0 +1,82 @@
+/* ==========================================================================
+Site Name: SITENAME
+Author: Tom Skarbek-Wazynski (ninesenses.co.uk)
+
+Stylesheet: Helpers
+========================================================================== */
+
+/**
+ * Cookies
+ */
+
+#tate-module {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: $typography-primary !important;
+  }
+}
+
+#tate-icon {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+/**
+ * Clearing and floating
+ */
+
+.aligncenter,
+.float-center {
+  display: block;
+
+  margin: {
+    right: auto;
+    left: auto;
+  }
+
+  img & {
+    margin-bottom: $typography-line-height;
+  }
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+/**
+ * Text aligments
+ */
+
+.align-text-left {
+  text-align: left;
+}
+
+.align-text-right {
+  text-align: right;
+}
+
+.align-text-center {
+  text-align: center;
+}
+
+/**
+ * Elements visibility
+ */
+
+.hidden {
+  display: none;
+}
+
+.sr-only-forced,
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

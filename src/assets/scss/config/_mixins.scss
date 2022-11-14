@@ -1,0 +1,141 @@
+/**
+ * Type
+ */
+@mixin fluid-type($min-vw, $max-vw, $min-value, $max-value) {
+  $factor: math.div(1, $max-vw - $min-vw) * ($max-value - $min-value);
+  $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
+
+  font-size: $min-value; // Fallback for older browsers
+  font-size: clamp(
+    #{if($min-value > $max-value, $max-value, $min-value)},
+    #{$calc-value},
+    #{if($min-value > $max-value, $min-value, $max-value)}
+  );
+}
+
+@mixin fluid-letter-spacing($min-vw, $max-vw, $min-value, $max-value) {
+  $factor: math.div(1, $max-vw - $min-vw) * ($max-value - $min-value);
+  $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
+
+  letter-spacing: $min-value; // Fallback for older browsers
+  letter-spacing: clamp(
+    #{if($min-value > $max-value, $max-value, $min-value)},
+    #{$calc-value},
+    #{if($min-value > $max-value, $min-value, $max-value)}
+  );
+}
+
+@mixin font-sizing($mobile: 16, $tablet: 18, $desktop: 20) {
+  @include font-size($mobile);
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    @include font-size($tablet);
+  }
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    @include font-size($desktop);
+  }
+}
+
+/*
+ * Output font size in px/rem
+ */
+
+@mixin font-size($px) {
+  font-size: $px + px;
+  font-size: #{math.div($px, 16)}rem;
+}
+
+@mixin letter-spacing($px) {
+  letter-spacing: #{math.div($px, 16)}rem;
+}
+
+/**
+ * Square
+ */
+
+@mixin square($padding: 100%) {
+  &:after {
+    display: block;
+    content: "";
+    padding-bottom: $padding;
+  }
+}
+
+/**
+ * Reset
+ */
+
+@mixin reset-list {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Positioning
+ */
+
+@mixin center($max-width: $container-max-width, $padding: $container-padding-mobile) {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-width;
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin block-padding {
+  padding: $component-spacing-mobile 0 $component-spacing-mobile;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    padding: $component-spacing-tablet 0 $component-spacing-tablet;
+  }
+
+  // @media screen and (min-width: $breakpoint-desktop) {
+  //   padding: $component-spacing-desktop 0 $component-spacing-desktop;
+  // }
+}
+
+@mixin box-padding {
+  padding: $component-spacing-mobile 20px $component-spacing-mobile;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    padding: $component-spacing-tablet 40px $component-spacing-tablet;
+  }
+
+  // @media screen and (min-width: $breakpoint-desktop) {
+  //   padding: $component-spacing-tablet 60px $component-spacing-tablet;
+  // }
+}
+
+/*
+ * Placeholder mixin for <input>
+ */
+
+@mixin placeholder {
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}
+
+/**
+ * Clearfix
+ */
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    display: table;
+
+    content: " ";
+  }
+
+  &:after {
+    clear: both;
+  }
+}

@@ -1,0 +1,40 @@
+@charset 'UTF-8';
+@use "sass:math";
+
+/**
+ * Configuration
+ */
+@import "config/variables";
+@import "config/mixins";
+
+/**
+ * Utils
+ */
+// @import "node_modules/aos/src/sass/aos.scss";
+@import "node_modules/plyr/src/sass/plyr.scss";
+@import "utils/*";
+
+// /**
+//  * Base
+//  */
+@import "base/*";
+
+// /**
+//  * Layout
+//  */
+@import "layout/*";
+
+// /**
+//  * Components
+//  */
+@import "components/*";
+
+// /**
+//  * Blocks
+//  */
+@import "blocks/*";
+
+/**
+ * Page Spefific Styles
+ */
+@import "pages/*";

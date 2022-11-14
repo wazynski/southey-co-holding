@@ -1,0 +1,56 @@
+button {
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  text-align: inherit;
+  outline: none;
+
+  &:focus {
+    opacity: 0.8;
+  }
+}
+
+.btn {
+  appearance: none;
+  color: var(--color-text-inverted);
+  background-color: var(--color-ui-200);
+  cursor: pointer;
+  display: inline-block;
+  font-family: $typography-primary;
+  font-weight: 400;
+  z-index: 1;
+  transition: color $animation-duration $animation-easing;
+
+  line-height: 1.1;
+  outline: 0;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none !important;
+  user-select: none;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  &:hover {
+    color: var(--color-text-inverted);
+    background-color: var(--color-ui-200);
+  }
+
+  @include font-size(16);
+  @include letter-spacing(0.29);
+
+  @media screen and (min-width: $breakpoint-tablet-horizontal) {
+    @include font-size(18);
+    @include letter-spacing(-0.32);
+  }
+
+  @media screen and (min-width: $breakpoint-tablet-horizontal) {
+    @include font-size(20);
+    @include letter-spacing(-0.36);
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "name": "QuantuMDx - Product Demo ",
+    "short_name": "QuantuMDx",
+    "icons": [
+        {
+            "src": "./images/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/safari-pinned-tab.svg",
+            "purpose": "maskable",
+            "sizes": "any"
+        }
+    ],
+    "id": "quantum-mdx-product-demo",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "background_color": "#35b29c",
+    "theme_color": "#35b29c"
+}

@@ -1,0 +1,83 @@
+body {
+  @include font-size($typography-font-size);
+
+  color: var(--color-text);
+
+  font-family: $typography-primary;
+  line-height: $typography-line-height;
+  font-weight: 300;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  transition: color $animation-duration $animation-easing;
+  text-decoration: none;
+  color: var(--color-text);
+
+  &:hover {
+    color: var(--color-ui-200);
+  }
+}
+
+%--link,
+.--link {
+}
+
+#{$selectors-headings} {
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0.5em 0;
+}
+
+.title {
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0.5em 0;
+  @include letter-spacing(-0.57);
+
+  svg {
+    margin-right: 0.5rem;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      margin-right: 1rem;
+    }
+  }
+
+  &.title--100 {
+    @include font-size(24);
+    @include letter-spacing(-0.43);
+
+    @media screen and (min-width: $breakpoint-tablet-horizontal) {
+      @include font-size(32);
+      @include letter-spacing(-0.57);
+    }
+  }
+
+  &.title--alt-100 {
+    font-family: $typography-secondary;
+    font-weight: 600;
+    @include font-size(12);
+    @include letter-spacing(1.06);
+    text-transform: uppercase;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      @include letter-spacing(1.24);
+      @include font-size(14);
+    }
+  }
+
+  &.title--200 {
+    @include font-size(20);
+    @include letter-spacing(-0.36);
+  }
+
+  &.title--300 {
+    @include font-size(22);
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      @include font-size(24);
+    }
+  }
+}
